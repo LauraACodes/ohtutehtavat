@@ -1,7 +1,7 @@
 
 package ohtu;
 
-public class Player {
+public class Player implements Comparable<Player> {
     private String name;
     private String nationality;
     private int assists;
@@ -9,38 +9,8 @@ public class Player {
     private int penalties;
     private String team;
     private int games;
+    private int points;
 
-    // Setterit
-    /*
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setNationality(String nationality) {
-        this.nationality = nationality;
-    }
- 
-    public void setAssists(int assists) {
-        this.assists = assists;
-    }
-
-    public void setGoals(int goals) {
-        this.goals = goals;
-    }    
-
-    public void setPenalties(int penalties) {
-        this.penalties = penalties;
-    }   
-
-    public void setTeam(String team) {
-        this.team = team;
-    }
-
-    public void setGames(int games) {
-        this.games = games;
-    }  
-    */
-    // Getterit
     public String getName() {
         return name;
     }
@@ -48,30 +18,19 @@ public class Player {
     public String getNationality() {
         return nationality;
     }
-    /*
-    public int getAssists() {
-        return assists;
-    }
-
-    public int getGoals() {
-        return goals;
-    }    
-
-    public int getPenalties() {
-        return penalties;
-    }    
-
-    public String getTeam() {
-        return team;
-    }    
     
-    public int getGames() {
-        return games;
-    }    
-    */
+    public void countPoints() {
+        this.points = goals + assists;
+        
+    }
     @Override
     public String toString() {
-        return name + ", team: " + team + ", goals: " + goals + ", assists: " + assists;
+        return name + ", " + team + ", " + goals + " + " + assists + " = " + points;
+    }
+
+    @Override
+    public int compareTo(Player player) {
+        return player.points - this.points;
     }
       
 }
