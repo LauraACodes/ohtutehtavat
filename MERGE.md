@@ -1,0 +1,1 @@
+https://github.com/sannahan/lukuvinkkikirjasto/commit/2485cad1b96df0cefb38842d05d4d6b8ce6d1dcf
