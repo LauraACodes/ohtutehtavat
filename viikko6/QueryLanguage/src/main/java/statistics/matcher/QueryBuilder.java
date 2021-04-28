@@ -21,12 +21,7 @@ public class QueryBuilder {
         this.matcher = new Or(matchers);
         return this;
     }
-    
-    public Matcher matches(Matcher m) {
-        this.matcher = m;
-        return matcher;
-    }
-    
+        
     public QueryBuilder playsIn(String team) {
         luoMatchers(new PlaysIn(team));
         return this;
